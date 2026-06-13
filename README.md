@@ -89,6 +89,8 @@ streamlit run app.py
 | Name | Role |
 |---|---|
 | Sindhura | AI Engineer & Full Stack Developer |
+| Anay | AI Engineer & Full Stack Developer  |
+| Sonali | AI Engineer & Full Stack Developer  |
 
 ---
 

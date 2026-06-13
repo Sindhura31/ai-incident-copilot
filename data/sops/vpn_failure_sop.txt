@@ -1,0 +1,38 @@
+STANDARD OPERATING PROCEDURE - VPN AUTHENTICATION FAILURE
+
+Incident Type: VPN Authentication Failure
+Severity: High
+Owner: Network Operations Team
+
+SYMPTOMS:
+- Users unable to connect to VPN
+- MFA prompts timing out
+- Authentication failures increasing in logs
+
+INVESTIGATION STEPS:
+1. Check VPN gateway status in monitoring dashboard
+2. Verify MFA provider API availability
+3. Review authentication logs for error patterns
+4. Check IdP (Identity Provider) health status
+5. Verify network connectivity to VPN endpoint
+
+ROOT CAUSE ANALYSIS:
+- MFA provider degradation is most common cause
+- Certificate expiry can cause authentication failures
+- Network routing issues can block VPN traffic
+
+RECOMMENDED ACTIONS:
+1. Route traffic through backup authentication path
+2. Contact MFA provider support if API is degraded
+3. Restart VPN gateway services if unresponsive
+4. Notify users of known issue and ETA
+
+ESCALATION:
+- L2: Network Engineering Team
+- L3: Identity Engineering Team
+- Vendor: MFA Provider Support
+
+VERIFICATION:
+- Confirm authentication success rate returns to baseline
+- Monitor VPN connection counts for 30 minutes
+- Close incident only after 95% success rate achieved

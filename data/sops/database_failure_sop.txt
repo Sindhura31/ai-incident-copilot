@@ -1,0 +1,42 @@
+STANDARD OPERATING PROCEDURE - DATABASE CONNECTIVITY FAILURE
+
+Incident Type: Database Connectivity Failure
+Severity: Critical
+Owner: Database Operations Team
+
+SYMPTOMS:
+- Applications unable to connect to database
+- Connection timeout errors in application logs
+- Database connection pool exhausted
+- Increased query response times
+
+INVESTIGATION STEPS:
+1. Check database server health and availability
+2. Verify connection pool settings and current usage
+3. Review database error logs for deadlocks or crashes
+4. Check network connectivity between app and database servers
+5. Verify database credentials and certificates are valid
+6. Check disk space on database server
+
+ROOT CAUSE ANALYSIS:
+- Connection pool exhaustion due to connection leaks
+- Database server overload from long running queries
+- Network partition between application and database
+- Disk space full causing database to stop accepting writes
+
+RECOMMENDED ACTIONS:
+1. Restart connection pool to release stale connections
+2. Kill long running queries blocking resources
+3. Scale up database server if under heavy load
+4. Free up disk space if storage is full
+
+ESCALATION:
+- L2: Database Engineering Team
+- L3: Cloud Infrastructure Team
+- Vendor: Database vendor support
+
+VERIFICATION:
+- Confirm application can connect to database
+- Monitor connection pool utilization
+- Verify query response times return to baseline
+- Close incident after 15 minutes of stable operation

@@ -1,0 +1,9 @@
+id,description,resolution,category
+1,VPN authentication failing for all users MFA timeout errors,Restarted MFA provider service and routed through backup auth path,VPN
+2,Users cannot connect to VPN certificate validation errors,Renewed expired SSL certificate on VPN gateway,VPN
+3,Database connection pool exhausted application throwing timeout errors,Increased connection pool size and killed long running queries,Database
+4,Application database connections failing after server migration,Updated connection strings with new database server IP address,Database
+5,Web application crashing with out of memory errors,Increased memory limits and fixed memory leak in latest deployment,Application
+6,Application returning 500 errors after deployment,Rolled back to previous deployment version and hotfixed null pointer exception,Application
+7,SSO login failing for all users after identity provider update,Reverted IdP configuration change that broke SAML assertion mapping,SSO
+8,Email service not delivering messages SMTP connection refused,Restarted SMTP relay service and updated firewall rules for port 587,Email

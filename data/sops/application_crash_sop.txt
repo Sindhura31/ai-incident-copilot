@@ -1,0 +1,42 @@
+STANDARD OPERATING PROCEDURE - APPLICATION CRASH
+
+Incident Type: Application Crash
+Severity: Critical
+Owner: Application Operations Team
+
+SYMPTOMS:
+- Application process terminated unexpectedly
+- Users receiving 500 errors or service unavailable
+- Application not responding to health checks
+- Memory usage spike before crash
+
+INVESTIGATION STEPS:
+1. Check application logs for stack traces and error messages
+2. Review memory and CPU usage before crash occurred
+3. Check for recent deployments or configuration changes
+4. Verify all dependent services are healthy
+5. Check disk space and system resources
+6. Review application crash dumps if available
+
+ROOT CAUSE ANALYSIS:
+- Memory leak causing out of memory crash
+- Unhandled exception in application code
+- Dependency service failure cascading to application
+- Recent deployment introducing critical bug
+
+RECOMMENDED ACTIONS:
+1. Restart application service immediately to restore service
+2. Rollback recent deployment if crash started after release
+3. Increase memory limits if OOM is root cause
+4. Isolate and fix the unhandled exception in code
+
+ESCALATION:
+- L2: Application Engineering Team
+- L3: Site Reliability Engineering Team
+- On-call: Development Team Lead
+
+VERIFICATION:
+- Confirm application is responding to health checks
+- Monitor error rates for 30 minutes after restart
+- Verify memory usage is within normal limits
+- Close incident after stable operation confirmed

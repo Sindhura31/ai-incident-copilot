@@ -1,0 +1,46 @@
+STANDARD OPERATING PROCEDURE - EMAIL SERVICE FAILURE
+
+Incident Type: Email Service Failure
+Severity: High
+Owner: Communication Infrastructure Team
+
+SYMPTOMS:
+- Users unable to send or receive emails
+- SMTP connection refused errors
+- Email queue backing up
+- Bounce messages increasing
+
+INVESTIGATION STEPS:
+1. Check email server health and availability
+2. Verify SMTP service is running on correct port
+3. Review email server logs for error patterns
+4. Check DNS MX records are correctly configured
+5. Verify firewall rules allow SMTP traffic (port 25, 465, 587)
+6. Check disk space on email server
+7. Verify SSL certificates for email service are valid
+
+ROOT CAUSE ANALYSIS:
+- SMTP relay service crashed or stopped
+- Firewall rule change blocking SMTP ports
+- Disk space full preventing new emails
+- SSL certificate expiry causing connection failures
+- DNS misconfiguration affecting mail routing
+
+RECOMMENDED ACTIONS:
+1. Restart SMTP relay service immediately
+2. Update firewall rules to allow SMTP traffic
+3. Free up disk space if storage is full
+4. Renew SSL certificates if expired
+5. Correct DNS MX records if misconfigured
+
+ESCALATION:
+- L2: Email Infrastructure Team
+- L3: Cloud Infrastructure Team
+- Vendor: Email service provider support
+
+VERIFICATION:
+- Send test email and confirm delivery
+- Check email queue is draining normally
+- Monitor bounce rate for 30 minutes
+- Confirm users can send and receive emails
+- Close incident after normal mail flow confirmed

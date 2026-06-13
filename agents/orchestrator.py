@@ -40,7 +40,10 @@ Generate a structured incident investigation report with exactly these sections:
 (Type, Severity, Affected System)
 
 ## 2. PROBABLE ROOT CAUSES
-(Top 3 ranked by likelihood with explanation)
+(Top 3 ranked by likelihood. For each, include:
+- Root cause description
+- Confidence score as percentage (e.g. 85%)
+- One line reasoning for the confidence level)
 
 ## 3. INVESTIGATION STEPS
 (Step by step actions to diagnose)

@@ -1,0 +1,42 @@
+STANDARD OPERATING PROCEDURE - SSO AUTHENTICATION FAILURE
+
+Incident Type: SSO Authentication Failure
+Severity: High
+Owner: Identity Engineering Team
+
+SYMPTOMS:
+- Users unable to login via Single Sign-On
+- SSO redirects failing or looping
+- SAML assertion errors in logs
+- All applications using SSO affected simultaneously
+
+INVESTIGATION STEPS:
+1. Check Identity Provider (IdP) health and availability
+2. Review SAML assertion logs for error codes
+3. Verify SSO certificate validity and expiry dates
+4. Check for recent IdP configuration changes
+5. Verify service provider metadata is current
+6. Test SSO flow with a test account
+
+ROOT CAUSE ANALYSIS:
+- IdP configuration change breaking SAML mapping
+- Expired SSO signing certificate
+- Clock skew between IdP and service provider
+- Recent IdP software update introducing breaking changes
+
+RECOMMENDED ACTIONS:
+1. Revert recent IdP configuration changes immediately
+2. Renew expired SSO signing certificate
+3. Synchronize system clocks between IdP and service providers
+4. Contact IdP vendor if issue persists after rollback
+
+ESCALATION:
+- L2: Identity Engineering Team
+- L3: IdP Vendor Support
+- Management: If all users affected for more than 30 minutes
+
+VERIFICATION:
+- Confirm SSO login succeeds for test account
+- Verify SAML assertions are valid in logs
+- Monitor login success rate for 30 minutes
+- Close incident after 95% success rate confirmed

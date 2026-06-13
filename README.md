@@ -26,15 +26,21 @@ A multi-agent AI copilot that takes an incident description as input and instant
 ---
 
 ## 🏗️ Architecture
-Incident Input
-↓
-SOP Agent (RAG on procedure documents)
-+
-Ticket Agent (similarity search on past incidents)
-↓
-Orchestrator (combines both → GPT-4o)
-↓
-Structured Investigation Report
+Incident Description (Input)
+         ↓
+   SOP Agent              Ticket Agent
+(RAG on SOPs)     +    (Similarity Search)
+         ↓
+      Orchestrator
+    (GPT-4o Reasoning)
+         ↓
+  Structured Report:
+  1. Incident Classification
+  2. Probable Root Causes
+  3. Investigation Steps
+  4. Recommended Actions
+  5. Escalation Guidance
+  6. Verification Checklist
 
 ---
 

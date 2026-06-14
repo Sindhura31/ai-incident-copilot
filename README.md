@@ -26,34 +26,49 @@ A multi-agent AI copilot that takes an incident description as input and instant
 ---
 
 ## 🏗️ Architecture
+
 Incident Description (Input)
          ↓
-   SOP Agent              Ticket Agent
-(RAG on SOPs)     +    (Similarity Search)
-         ↓
-      Orchestrator
-    (GPT-4o Reasoning)
+    ┌─────────────────────────────────┐
+    │         CrewAI Agent Swarm      │
+    │                                 │
+    │  🤖 SOP Retrieval Agent         │
+    │     (ChromaDB RAG on SOPs)      │
+    │           ↓                     │
+    │  🤖 Historical Ticket Agent     │
+    │     (ChromaDB Similarity Search)│
+    │           ↓                     │
+    │  🤖 Root Cause Analyst Agent    │
+    │     (Evidence Analysis)         │
+    │           ↓                     │
+    │  🤖 Investigation Validator     │
+    │     (Report Generation)         │
+    └─────────────────────────────────┘
          ↓
   Structured Report:
-  1. Incident Classification
-  2. Probable Root Causes
-  3. Investigation Steps
-  4. Recommended Actions
-  5. Escalation Guidance
-  6. Verification Checklist
+1. Incident Classification
+2. Probable Root Causes (with confidence %)
+3. Investigation Steps
+4. Recommended Actions
+5. Escalation Guidance
+6. Verification Checklist
 
 ---
 
 ## 🤖 AI Tools Used
 
-- **Azure OpenAI GPT-4o** — Report generation and reasoning
-- **ChromaDB** — Vector database for SOPs and tickets
-- **LangChain** — Embedding pipeline
-- **CrewAI** — Agent orchestration framework
+- **Azure OpenAI GPT-4o** — LLM powering all 4 CrewAI agents
+- **ChromaDB** — Vector database for SOPs and historical tickets
+- **CrewAI** — Multi-agent orchestration framework (4-agent sequential swarm)
 - **Streamlit** — UI framework
-
 ---
-
+### 🤖 Agent Swarm Details
+| Agent | Role |
+|---|---|
+| SOP Retrieval Specialist | Retrieves and analyzes relevant Standard Operating Procedures |
+| Historical Ticket Analyst | Finds similar past incidents and resolution patterns |
+| Root Cause Analyst | Ranks probable root causes with confidence levels |
+| Investigation Validator | Generates final validated structured report |
 ## ⚙️ Setup Instructions
 
 ### Prerequisites

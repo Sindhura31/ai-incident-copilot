@@ -1,0 +1,9 @@
+streamlit
+openai
+chromadb
+pandas
+python-dotenv
+crewai
+crewai[azure-ai-inference]
+litellm
+pypdf2

@@ -3,6 +3,6 @@ openai
 chromadb
 pandas
 python-dotenv
-crewai==0.80.0
+crewai
 litellm
 pypdf2

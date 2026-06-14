@@ -5,7 +5,12 @@ openai
 chromadb
 pandas
 python-dotenv
-crewai
+crewai==1.14.7
+crewai[azure-ai-inference]
 litellm
 pypdf2
+setuptools
 EOF
+git add requirements.txt
+git commit -m "Fix requirements.txt and add setuptools"
+git push

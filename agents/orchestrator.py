@@ -16,7 +16,7 @@ os.environ["AZURE_API_VERSION"] = "2025-01-01-preview"
 azure_llm = LLM(
     model="azure/gpt-4o",
     api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-    api_base="https://sindu-mqcee492-eastus2.cognitiveservices.azure.com",
+    api_base="https://sindu-mqcee492-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-4o/models",
     api_version="2025-01-01-preview"
 )
 

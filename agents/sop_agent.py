@@ -13,7 +13,7 @@ class SOPAgent:
             azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
             api_version=os.getenv("AZURE_OPENAI_API_VERSION")
         )
-        self.chroma_client = chromadb.PersistentClient(path="./data/chroma_db")
+        self.chroma_client = chromadb.PersistentClient(path="/tmp/chroma_db")
         self.embedding_fn = embedding_functions.DefaultEmbeddingFunction()
         self.collection = self.chroma_client.get_or_create_collection(
             name="sop_documents",

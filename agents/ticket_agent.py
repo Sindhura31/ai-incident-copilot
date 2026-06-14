@@ -8,7 +8,7 @@ load_dotenv()
 
 class TicketAgent:
     def __init__(self):
-        self.chroma_client = chromadb.PersistentClient(path="./data/chroma_db")
+        self.chroma_client = chromadb.PersistentClient(path="/tmp/chroma_db")
         self.embedding_fn = embedding_functions.DefaultEmbeddingFunction()
         self.collection = self.chroma_client.get_or_create_collection(
             name="ticket_documents",

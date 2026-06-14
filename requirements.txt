@@ -3,7 +3,6 @@ openai
 chromadb
 pandas
 python-dotenv
-crewai
-crewai[azure-ai-inference]
+crewai==0.80.0
 litellm
 pypdf2
